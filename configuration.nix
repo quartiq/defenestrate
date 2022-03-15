@@ -27,16 +27,12 @@
     "systemd-suspend-then-hibernate.service"
   ];
 
-  # Select internationalisation properties.
   console.font = "Lat2-Terminus16";
   console.keyMap = "us";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Set your time zone.
   time.timeZone = "Asia/Hong_Kong";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget
