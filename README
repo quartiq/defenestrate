@@ -1,0 +1,4 @@
+After installation is finalized:
+* copy device database to ~/artiq
+* set timezone
+* comment out openssh.authorizedKeys.keys
