@@ -48,6 +48,7 @@
     firefox
     chromium
     (python3.withPackages(ps: with ps; [ numpy scipy matplotlib jupyter pyserial artiq.packages.x86_64-linux.artiq ]))
+    artiq.packages.x86_64-linux.openocd-bscanspi
     texlive.combined.scheme-full
     psmisc
     xc3sprog
@@ -99,7 +100,7 @@
     ];
   };
   security.sudo.wheelNeedsPassword = false;
-  services.udev.packages = [ pkgs.openocd ];
+  services.udev.packages = [ artiq.packages.x86_64-linux.openocd-bscanspi ];
 
   nix.package = pkgs.nix_2_4;
   nix.binaryCachePublicKeys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
