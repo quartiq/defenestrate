@@ -46,7 +46,15 @@
     imagemagick
     firefox
     chromium
-    (python3.withPackages(ps: with ps; [ numpy scipy matplotlib jupyter pyserial artiq.packages.x86_64-linux.artiq ]))
+    (python3.withPackages(ps: with ps; [
+      numpy
+      scipy
+      matplotlib
+      jupyter
+      pyserial
+      spyder
+      artiq.packages.x86_64-linux.artiq
+    ]))
     artiq.packages.x86_64-linux.openocd-bscanspi
     texlive.combined.scheme-full
     psmisc
