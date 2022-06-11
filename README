@@ -10,13 +10,11 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 nixos-generate-config --root /mnt
-# copy bootstrap configuration to /mnt/etc/nixos
-nixos-install
+# copy configuration to /mnt/etc/nixos
+nix-env -i git
+nixos-install --flake /mnt/etc/nixos#artiq
 reboot
 # run memtest86
-# copy final configuration to /etc/nixos
-nixos-rebuild --upgrade boot
-reboot
 
 After installation is finalized:
 * copy device database to ~/artiq
