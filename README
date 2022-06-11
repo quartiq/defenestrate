@@ -22,5 +22,4 @@ After installation is finalized:
 * comment out openssh.authorizedKeys.keys
 * sudo nixos-rebuild --upgrade boot
 * sudo nix-collect-garbage -d
-* sudo passwd rabi
 * history clear
