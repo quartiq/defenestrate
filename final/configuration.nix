@@ -58,7 +58,7 @@
     artiq.packages.x86_64-linux.openocd-bscanspi
     texlive.combined.scheme-full
     psmisc
-    #xc3sprog
+    xc3sprog
     gtkwave
     unzip
     zip
