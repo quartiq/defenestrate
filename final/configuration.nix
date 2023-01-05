@@ -1,4 +1,4 @@
-{ artiq }: { config, pkgs, ... }:
+{ config, pkgs, artiq, ... }:
 
 {
   imports =
