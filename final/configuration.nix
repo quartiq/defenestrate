@@ -98,8 +98,8 @@
   programs.command-not-found.enable = false;  # broken with flakes, https://github.com/NixOS/nixpkgs/issues/39789
   users.mutableUsers = true;
   users.defaultUserShell = pkgs.fish;
+  users.users.root.initialPassword = "rabi";
   users.extraGroups.plugdev = { };
-  users.extraUsers.root.initialPassword = "rabi";
   users.extraUsers.rabi = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "plugdev" "dialout" "wireshark"];

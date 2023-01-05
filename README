@@ -12,7 +12,7 @@ mount /dev/disk/by-label/boot /mnt/boot
 nixos-generate-config --root /mnt
 # copy configuration to /mnt/etc/nixos
 nix-env -iA nixos.git
-nixos-install --flake /mnt/etc/nixos#artiq
+nixos-install --no-root-password --flake /mnt/etc/nixos#artiq
 reboot
 # run memtest86
 
