@@ -92,7 +92,7 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
   services.xserver.desktopManager.gnome.enable = true;
-  environment.gnome.excludePackages = [ pkgs.epiphany pkgs.gnome3.geary ];
+  environment.gnome.excludePackages = [ pkgs.epiphany ];
 
   programs.fish.enable = true;
   programs.command-not-found.enable = false;  # broken with flakes, https://github.com/NixOS/nixpkgs/issues/39789
