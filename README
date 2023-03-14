@@ -16,8 +16,10 @@ nix-env -iA nixos.git
 rm /etc/nix/nix.conf
 cp /etc/static/nix/nix.conf /etc/nix/nix.conf
 vi /etc/nix/nix.conf
-# set: substituters = https://cache.nixos.org/ https://nixbld.m-labs.hk/
-# set: trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc=
+# set:
+substituters = https://nixbld.m-labs.hk?priority=10 https://cache.nixos.org/
+trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc=
+#
 nixos-install --no-root-password --flake /mnt/etc/nixos#artiq
 reboot
 # run memtest86
