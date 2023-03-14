@@ -112,8 +112,8 @@
   security.sudo.wheelNeedsPassword = false;
   services.udev.packages = [ artiq.packages.x86_64-linux.openocd-bscanspi ];
 
-  nix.binaryCachePublicKeys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
-  nix.binaryCaches = ["https://nixbld.m-labs.hk" "https://cache.nixos.org"];
+  nix.settings.trusted-public-keys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
+  nix.settings.substituters = ["https://nixbld.m-labs.hk"];
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
