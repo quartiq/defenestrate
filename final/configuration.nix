@@ -47,7 +47,7 @@
     imagemagick
     firefox
     chromium
-    (python3.withPackages(ps: with ps; [
+    (artiq.inputs.nixpkgs.legacyPackages.x86_64-linux.python3.withPackages(ps: with ps; [
       numpy
       scipy
       matplotlib
@@ -76,7 +76,7 @@
   hardware.opengl.driSupport = true;
 
   services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
+  services.openssh.settings.PasswordAuthentication = false;
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
