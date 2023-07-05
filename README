@@ -1,33 +1,10 @@
-Installation commands for NUC:
-
-parted /dev/nvme0n1 -- mklabel gpt
-parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
-parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
-parted /dev/nvme0n1 -- set 2 esp on
-mkfs.ext4 -L nixos /dev/nvme0n1p1
-mkfs.fat -F 32 -n boot /dev/nvme0n1p2
-mount /dev/disk/by-label/nixos /mnt
-mkdir -p /mnt/boot
-mount /dev/disk/by-label/boot /mnt/boot
-nixos-generate-config --root /mnt
-# copy configuration to /mnt/etc/nixos
-nix-env -iA nixos.git
-# work around https://github.com/NixOS/nixpkgs/issues/209819
-rm /etc/nix/nix.conf
-cp /etc/static/nix/nix.conf /etc/nix/nix.conf
-vi /etc/nix/nix.conf
-# set:
-substituters = https://nixbld.m-labs.hk?priority=10 https://cache.nixos.org/
-trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc=
-#
-nixos-install --no-root-password --flake /mnt/etc/nixos#artiq
-reboot
-# run memtest86
-
-After installation is finalized:
-* copy device database to ~/artiq
-* set timezone
-* comment out openssh.authorizedKeys.keys
+* Enter BIOS, disable secure boot, enable UEFI PXE network boot
+* sudo auto-install
+* sudo reboot
+* Run memtest86
+* Copy device database to ~/artiq
+* Set timezone
+* Comment out openssh.authorizedKeys.keys
 * sudo nixos-rebuild boot
 * sudo nix-collect-garbage -d
 * history clear
