@@ -68,7 +68,7 @@
     gimp
     gnome3.gnome-tweaks
     libreoffice-fresh
-    vscode
+    vscodium
   ];
   programs.wireshark.enable = true;
   programs.wireshark.package = pkgs.wireshark;
