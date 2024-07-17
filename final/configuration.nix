@@ -10,6 +10,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.kernelParams = ["intel_idle.max_cstate=1"];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.cpu.intel.updateMicrocode = true;
   
   networking.hostName = "artiq";
@@ -123,5 +124,5 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 }
