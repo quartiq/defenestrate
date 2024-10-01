@@ -33,7 +33,7 @@ let
     parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
     parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
     parted /dev/nvme0n1 -- set 2 esp on
-    mkfs.ext4 -L nixos /dev/nvme0n1p1
+    mkfs.btrfs -L nixos /dev/nvme0n1p1
     mkfs.fat -F 32 -n boot /dev/nvme0n1p2
     mount /dev/disk/by-label/nixos /mnt
     mkdir -p /mnt/boot
@@ -44,8 +44,13 @@ let
     ''; 
 
   customModule = {
+    # system.stateVersion = "24.05";
     environment.systemPackages = [ autoInstall pkgs.git ];
     documentation.info.enable = false; # https://github.com/NixOS/nixpkgs/issues/124215
+    documentation.man.enable = false;
+    # nix.settings.extra-sandbox-paths = [ "/bin/sh=${pkgs.bash}/bin/sh" ];
+    # services.udev.packages = [ pkgs.bash ];
+    # services.udev.path = [ pkgs.bash ];
     nix.settings.trusted-public-keys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
     nix.settings.substituters = ["https://nixbld.m-labs.hk"];
   };
