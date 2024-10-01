@@ -32,7 +32,7 @@
   console.keyMap = "us";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  time.timeZone = "Asia/Hong_Kong";
+  time.timeZone = "Europe/Berlin";
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -106,8 +106,8 @@
     extraGroups = ["networkmanager" "wheel" "plugdev" "dialout" "wireshark"];
     initialPassword = "rabi";
     openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPk5WyFoWSvF4ozehxcVBoZ+UHgrI7VW/OoQfFFwIQe0qvetUZBMZwR2FwkLPAMZV8zz1v4EfncudEkVghy4P+/YVLlDjqDq9zwZnh8Nd/ifu84wmcNWHT2UcqnhjniCdshL8a44memzABnxfLLv+sXhP2x32cJAamo5y6fukr2qLp2jbXzR+3sv3klE0ruUXis/BR1lLqNJEYP8jB6fLn2sLKinnZPfn6DwVOk10mGeQsdME/eGl3phpjhODH9JW5V2V5nJBbC0rBnq+78dyArKVqjPSmIcSy72DEIpTctnMEN1W34BGrnsDd5Xd/DKxKxHKTMCHtZRwLC2X0NWN"
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCMALVC8RDTHec+PC8y1s3tcpUAODgq6DEzQdHDf/cyvDMfmCaPiMxfIdmkns5lMa03hymIfSmLUF0jFFDc7biRp7uf9AAXNsrTmplHii0l0McuOOZGlSdZM4eL817P7UwJqFMxJyFXDjkubhQiX6kp25Kfuj/zLnupRCaiDvE7ho/xay6Jrv0XLz935TPDwkc7W1asLIvsZLheB+sRz9SMOb9gtrvk5WXZl5JTOFOLu+JaRwQLHL/xdcHJTOod7tqHYfpoC5JHrEwKzbhTOwxZBQBfTQjQktKENQtBxXHTe71rUEWfEZQGg60/BC4BrRmh4qJjlJu3v4VIhC7SSHn1"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC27krR8G8Pb59YuYm7+X2mmNnVdk/t9myYgO8LH0zfb2MeeXX5+90nW9kMjKflJss/oLl8dkD85jbJ0fRbRkfJd20pGCqCUuYAbYKkowigFVEkbrbWSLkmf+clRjzJOuBuUA0uq0XKS17uMC3qhu+dDdBOAIKb3L83NfVE8p8Pjb4BPktQrdxefM43/x4jTMuc7tgxVmTOEge3+rmVPK2GnLkUBgBn8b6S+9ElPd63HXI5J5f61v21l5N9V0mhTu1pv6PiDRdFIlFDK9dLVZcZ2qlzpKmCnFrOoreBEgre44SpfFe5/MMItxvWiVsj/rij/rHZZiol1k7JiQCnEHeCCbjjvcBBka5HxZgcb3vBZVceTOawrmjbdbA2dq35sUptz/bEgdZ1UVCmVpWsdROAlEDBmSSbcVwxzcvhoKnkpbuP4Q0V3tVKSLW053ADFNB4frtwY5nAZfsVErFLLphjwb8nlyJoDRNapQrn5syEiW0ligX2AAskZTYIl2A5AYyWPrmX6HJOPqZGatMU3qQiRMxs+hFqhyyCmBgl0kcsgW09MBKtJWk1Fbii98MHqgRUN9R7AUiYy5p78Pnv9DC8DT8Ubl9zoP0g5d40P9NGK2LAhMxLXvtckJ4ERqbSEcNZJw+q4jBrOHnMTz+NLdAUiEtru+6T2OdhaHv+eiNlFQ=="
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMUaB2G1jexxfkdlly3fdWslH54/s/bOuvk9AxqpjtAY"
     ];
   };
   security.sudo.wheelNeedsPassword = false;

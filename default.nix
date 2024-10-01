@@ -45,8 +45,9 @@ let
 
   customModule = {
     environment.systemPackages = [ autoInstall pkgs.git ];
+    documentation.info.enable = false; # https://github.com/NixOS/nixpkgs/issues/124215
     nix.settings.trusted-public-keys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
-    nix.settings.substituters = ["https://nixbld.m-labs.hk?priority=10"];
+    nix.settings.substituters = ["https://nixbld.m-labs.hk"];
   };
 
 in
