@@ -108,6 +108,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC27krR8G8Pb59YuYm7+X2mmNnVdk/t9myYgO8LH0zfb2MeeXX5+90nW9kMjKflJss/oLl8dkD85jbJ0fRbRkfJd20pGCqCUuYAbYKkowigFVEkbrbWSLkmf+clRjzJOuBuUA0uq0XKS17uMC3qhu+dDdBOAIKb3L83NfVE8p8Pjb4BPktQrdxefM43/x4jTMuc7tgxVmTOEge3+rmVPK2GnLkUBgBn8b6S+9ElPd63HXI5J5f61v21l5N9V0mhTu1pv6PiDRdFIlFDK9dLVZcZ2qlzpKmCnFrOoreBEgre44SpfFe5/MMItxvWiVsj/rij/rHZZiol1k7JiQCnEHeCCbjjvcBBka5HxZgcb3vBZVceTOawrmjbdbA2dq35sUptz/bEgdZ1UVCmVpWsdROAlEDBmSSbcVwxzcvhoKnkpbuP4Q0V3tVKSLW053ADFNB4frtwY5nAZfsVErFLLphjwb8nlyJoDRNapQrn5syEiW0ligX2AAskZTYIl2A5AYyWPrmX6HJOPqZGatMU3qQiRMxs+hFqhyyCmBgl0kcsgW09MBKtJWk1Fbii98MHqgRUN9R7AUiYy5p78Pnv9DC8DT8Ubl9zoP0g5d40P9NGK2LAhMxLXvtckJ4ERqbSEcNZJw+q4jBrOHnMTz+NLdAUiEtru+6T2OdhaHv+eiNlFQ=="
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMUaB2G1jexxfkdlly3fdWslH54/s/bOuvk9AxqpjtAY"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIu6yhjCoZ62eamYrAXtFefDhplTRUIdD4tncwlkyAEH"
     ];
   };
   security.sudo.wheelNeedsPassword = false;
