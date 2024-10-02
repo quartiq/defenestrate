@@ -33,7 +33,7 @@ let
     parted /dev/nvme0n1 -- mkpart primary 512MiB 100%
     parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
     parted /dev/nvme0n1 -- set 2 esp on
-    mkfs.btrfs -L nixos /dev/nvme0n1p1
+    mkfs.btrfs -f -L nixos /dev/nvme0n1p1
     mkfs.fat -F 32 -n boot /dev/nvme0n1p2
     mount /dev/disk/by-label/nixos /mnt
     mkdir -p /mnt/boot
@@ -41,6 +41,7 @@ let
     nixos-generate-config --root /mnt
     cp ${./final}/* /mnt/etc/nixos
     nixos-install --no-root-password --flake /mnt/etc/nixos#artiq
+    reboot
     ''; 
 
   customModule = {
