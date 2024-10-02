@@ -1,6 +1,5 @@
 * Enter BIOS, disable secure boot, enable UEFI PXE network boot
 * sudo auto-install
-* sudo reboot
 * Run memtest86
 * Copy device database to ~/artiq
 * Set timezone
