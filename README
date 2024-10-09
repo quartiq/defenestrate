@@ -2,7 +2,7 @@
 * sudo auto-install
 * Run memtest86
 * Copy device database to ~/artiq
-* Set timezone
+* Set timezone and kb layout
 * Comment out openssh.authorizedKeys.keys
 * sudo nixos-rebuild boot
 * sudo nix-collect-garbage -d
