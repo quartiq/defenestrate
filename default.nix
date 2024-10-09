@@ -45,7 +45,7 @@ let
     ''; 
 
   customModule = {
-    # system.stateVersion = "24.05";
+    system.stateVersion = "24.05";
     environment.systemPackages = [ autoInstall pkgs.git ];
     documentation.info.enable = false; # https://github.com/NixOS/nixpkgs/issues/124215
     documentation.man.enable = false;
