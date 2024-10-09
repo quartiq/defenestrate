@@ -32,7 +32,7 @@
   console.keyMap = "us";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "UTC";
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
