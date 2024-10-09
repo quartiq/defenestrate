@@ -84,11 +84,11 @@
   hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
   services.xserver.enable = true;
-  services.xserver.layout = "us";
+  services.xserver.xkb.layout = "us";
 
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "rabi";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "rabi";
   # https://github.com/NixOS/nixpkgs/issues/103746
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
