@@ -1,6 +1,14 @@
 { config, pkgs, artiq, ... }:
 
-{
+let
+  sealOff = pkgs.writeShellScriptBin "seal-off"
+  ''
+  set -e
+  nixos-rebuild boot
+  nix-collect-garbage -d
+  '';
+
+in {
   imports =
     [
       ./hardware-configuration.nix
@@ -36,6 +44,7 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    sealOff
     wget
     vim
     gitAndTools.gitFull
