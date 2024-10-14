@@ -41,7 +41,6 @@ let
     nixos-generate-config --root /mnt
     cp ${./final}/* /mnt/etc/nixos
     nixos-install --no-root-password --flake /mnt/etc/nixos#artiq
-    reboot
     ''; 
 
   customModule = {
