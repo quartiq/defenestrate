@@ -43,20 +43,26 @@ let
     nixos-install --no-root-password --flake /mnt/etc/nixos#artiq
     ''; 
 
-  customModule = {
-    system.stateVersion = "24.05";
-    environment.systemPackages = [ autoInstall pkgs.git ];
-    documentation.info.enable = false; # https://github.com/NixOS/nixpkgs/issues/124215
-    documentation.man.enable = false;
-    nix.settings.trusted-public-keys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
-    nix.settings.substituters = ["https://nixbld.m-labs.hk"];
-  };
+  customModule = mlabs:
+    let storeUrl = "https://nixbld.m-labs.hk" + (if mlabs then "?priority=10" else "");
+    in
+      {
+        system.stateVersion = "24.05";
+        environment.systemPackages = [ autoInstall pkgs.git ];
+        documentation.info.enable = false; # https://github.com/NixOS/nixpkgs/issues/124215
+        documentation.man.enable = false;
+        nix.settings.trusted-public-keys = ["nixbld.m-labs.hk-1:5aSRVA5b320xbNvu30tqxVPXpld73bhtOeH6uAjRyHc="];
+        nix.settings.substituters = [ storeUrl ];
+      };
 
 in
-  makeNetboot {
-    modules = [
-      <nixpkgs/nixos/modules/installer/netboot/netboot-minimal.nix>
-      customModule
-    ];
-    system = "x86_64-linux";
-  }
+  { mlabs ? false }:
+    let module = customModule mlabs;
+    in
+      makeNetboot {
+        modules = [
+          <nixpkgs/nixos/modules/installer/netboot/netboot-minimal.nix>
+          module
+        ];
+        system = "x86_64-linux";
+      }

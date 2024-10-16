@@ -1,3 +1,8 @@
+On build device:
+* nix-build
+* (for LAN builds) nix-build --arg mlabs true
+
+On target device:
 * Enter BIOS, disable secure boot, enable UEFI PXE network boot
 * sudo auto-install
 * sudo reboot
