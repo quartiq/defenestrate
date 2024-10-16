@@ -10,5 +10,7 @@ On target device:
 * Copy device database to ~/artiq
 * Set timezone and kb layout
 * Comment out openssh.authorizedKeys.keys
-* sudo seal-off
 * history clear
+
+On build device:
+* cat sealoff.sh | ssh rabi@artiq "sudo sh"
