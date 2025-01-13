@@ -70,6 +70,7 @@
     gnome3.gnome-tweaks
     libreoffice-fresh
     vscodium
+    h5utils
   ];
   programs.wireshark.enable = true;
   programs.wireshark.package = pkgs.wireshark;
@@ -78,6 +79,7 @@
 
   services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.X11Forwarding = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
